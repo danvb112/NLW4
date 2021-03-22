@@ -77,4 +77,6 @@
      background: var(--white);
      color: var(--text);
      cursor: not-allowed;
+     justify-content: space-evenly;
+    border-bottom: solid 5px var(--green);
 }
