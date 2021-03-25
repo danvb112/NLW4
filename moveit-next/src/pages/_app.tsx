@@ -1,6 +1,6 @@
-import '../styles/global.css'
+import '../styles/global.css';
 
-import { ChallengeProvider } from '../contexts/ChallengesContext'
+import { ChallengeProvider } from '../contexts/ChallengesContext';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -10,4 +10,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+export default MyApp;

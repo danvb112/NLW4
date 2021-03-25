@@ -1,5 +1,5 @@
-import { createContext, useState, ReactNode, useEffect } from 'react'
-import challenges from '../../Challenges.json'
+import { createContext, useState, ReactNode, useEffect } from 'react';
+import challenges from '../../Challenges.json';
 
 interface Challenge {
     type: 'body' | 'eye';
@@ -32,9 +32,9 @@ export function ChallengeProvider({ children }: ChallengesProviderProps) {
     const [currentExperience, setCurrentExperience] = useState(0);
     const [challengesCompleted, setChallengesCompleted] = useState(0);
 
-    const [activeChallenge, setActiveChallenge] = useState(null) 
+    const [activeChallenge, setActiveChallenge] = useState(null) ;
 
-    const experienceToNextLevel = Math.pow((level + 1 ) * 4, 2)
+    const experienceToNextLevel = Math.pow((level + 1 ) * 4, 2);
 
 
     useEffect(() => {
@@ -47,16 +47,16 @@ export function ChallengeProvider({ children }: ChallengesProviderProps) {
 
     function startNewChallenge() {
         const radomChallengeIndex = Math.floor(Math.random() * challenges.length);
-        const challenge = challenges[radomChallengeIndex]
+        const challenge = challenges[radomChallengeIndex];
 
-        setActiveChallenge(challenge)
+        setActiveChallenge(challenge);
 
         new Audio('./notification.mp3').play();
 
         if (Notification.permission === 'granted') {
             new Notification('Novo Desafio!!!', {
                 body: `Valendo ${challenge.amount} xp!`
-            })
+            });
         }
     }
 
@@ -69,9 +69,9 @@ export function ChallengeProvider({ children }: ChallengesProviderProps) {
             return;
         }
 
-        const { amount } = activeChallenge
+        const { amount } = activeChallenge;
 
-        let finalExperience = currentExperience + amount
+        let finalExperience = currentExperience + amount;
 
         if (finalExperience >= experienceToNextLevel) {
             finalExperience = finalExperience - experienceToNextLevel;

@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
 import CompletedChallenges from "../components/CompletedChallenges";
 import ExperienceBar from "../components/ExperienceBar";

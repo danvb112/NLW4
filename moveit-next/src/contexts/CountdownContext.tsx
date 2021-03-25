@@ -14,7 +14,7 @@ interface CountdownProviderProps {
     children: ReactNode;
 }
 
-export const CountdownContext = createContext({} as CountdownContextData)
+export const CountdownContext = createContext({} as CountdownContextData);
 
 let countDownTimeout: NodeJS.Timeout;
 
@@ -34,17 +34,17 @@ export function CountdownProvider({ children }: CountdownProviderProps ) {
     }
 
     function resetCountdown() {
-        clearTimeout(countDownTimeout)
+        clearTimeout(countDownTimeout);
         setisActive(false);
-        setTime(0.05 * 60)
-        setHasFinished(false)
+        setTime(0.05 * 60);
+        setHasFinished(false);
     }
 
     useEffect(() => {
         if (isActive && time > 0) {
             setTimeout(() => {
                 setTime(time - 1);
-            }, 1000)
+            }, 1000);
         } else if (isActive && time === 0) {
             setHasFinished(true);
             setisActive(false);
